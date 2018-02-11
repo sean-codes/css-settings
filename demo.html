@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
    <head>
-      <style rel="stylesheet" href="./css.css"></style>
+      <link rel="stylesheet" href="./css.css"></link>
 
       <style>
          .container{
@@ -26,10 +26,26 @@
             new CSSettings({
                settings: [
                   {
-                     label: 'container max-width',
+                     label: 'max-width',
                      style: 'max-width',
                      suffix: 'px',
                      input: { type: 'range', min: 0, max: 400, value: 0 }
+                  },
+                  {
+                     label: 'background',
+                     style: 'color',
+                     input: { type: 'text', value: 'center'}
+                  },
+                  {
+                     label: 'text-align',
+                     style: 'text-align',
+                     input: { type: 'select', value: 'center'},
+                     options: ['center', 'left', 'right']
+                  },
+                  {
+                     label: 'transform-style',
+                     style: 'transform-style',
+                     input: { type: 'checkbox', value: 'preserve-3d', checked: true}
                   }
                ]
             })
