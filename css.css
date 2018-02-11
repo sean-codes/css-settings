@@ -1,4 +1,22 @@
-.cssettings-container {
+.cssettings {
    position:fixed;
-   top:0; left:0;
+   top:0; right:0;
+   color:#FFF;
+   background:#0009;
+   display:table;
+   padding:10px;
+   font-size:13px;
+   font-weight:600;
+   font-family:monospace;
+}
+
+.cssettings .cssettings-setting {
+   display:table-row;
+}
+
+.cssettings .cssettings-setting .cssettings-setting-label,
+.cssettings .cssettings-setting .cssettings-setting-input,
+.cssettings .cssettings-setting .cssettings-setting-value{
+   display:table-cell;
+   margin:5px 10px;
 }
