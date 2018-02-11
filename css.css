@@ -1,6 +1,6 @@
 .cssettings {
    position:fixed;
-   top:0; right:0;
+   top:0; left:0;
    color:#FFF;
    background:#0009;
    display:table;
@@ -17,6 +17,12 @@
 .cssettings .cssettings-setting .cssettings-setting-label,
 .cssettings .cssettings-setting .cssettings-setting-input,
 .cssettings .cssettings-setting .cssettings-setting-value{
+   box-sizing:border-box;
+   font-family:monospace;
    display:table-cell;
-   margin:5px 10px;
+   margin:5px 0px;
+   padding:0px 10px;
+}
+.cssettings .cssettings-setting .cssettings-setting-input{
+   width:100%;
 }
