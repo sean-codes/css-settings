@@ -17,11 +17,12 @@ function CSSettings(options) {
       container.classList.add('cssettings-setting')
       setting.html = {
          label: document.createElement('div'),
+         inputWrapper: document.createElement('div'),
          input: document.createElement(setting.input.type == 'select' ? 'select' : 'input'),
          value: document.createElement('div')
       }
       setting.html.label.classList.add('cssettings-setting-label')
-      setting.html.input.classList.add('cssettings-setting-input')
+      setting.html.inputWrapper.classList.add('cssettings-setting-input')
       setting.html.value.classList.add('cssettings-setting-value')
       if(setting.input.type == 'select') {
          for(var option of setting.options) {
@@ -29,8 +30,9 @@ function CSSettings(options) {
          }
       }
       // Append
-      this.container.appendChild(container)
       for(var element in setting.html) container.appendChild(setting.html[element])
+      setting.html.inputWrapper.appendChild(setting.html.input)
+      this.container.appendChild(container)
 
       // Config
       setting.suffix = setting.suffix || ''
