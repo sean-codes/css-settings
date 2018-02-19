@@ -35,24 +35,28 @@ function CSSettings(options) {
       this.container.appendChild(container)
 
       // Config
+      setting.target = setting.target
       setting.suffix = setting.suffix || ''
-      for(property in setting.input) setting.html.input[property] = setting.input[property]
+      console.log(setting.input)
+      for(property in setting.input) setting.html.input.setAttribute(property, setting.input[property])
       setting.html.value.innerHTML = setting.html.input.value + setting.suffix
       setting.html.label.innerHTML = setting.label
       // Listeners
       setting.html.input.addEventListener('change', this.change.bind(setting))
       setting.html.input.addEventListener('input', this.change.bind(setting))
-
+      if(setting.create) setting.create()
+      this.change.call(setting)
       return
    }
 
    this.change = function() {
-      console.log('change')
       var value = this.html.input.value
       if(this.input.type == 'checkbox'){
          value = this.html.input.checked ? this.html.input.value : 'initial'
       }
-      this.html.value.innerHTML = value + this.suffix;
+      var value = this.value ? this.value() : value + this.suffix
+      this.html.value.innerHTML = value
+      if(this.target) this.target.style[this.style] = value
    }
 
    this.construct(options)

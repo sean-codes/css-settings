@@ -2,7 +2,7 @@
    position:fixed;
    top:0; left:0;
    color:#FFF;
-   background:#0009;
+   background:rgba(0, 0, 0, 0.75);
    padding:10px;
    font-size:12px;
    font-weight:600;
