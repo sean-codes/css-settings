@@ -37,7 +37,6 @@ function CSSettings(options) {
       // Config
       setting.target = setting.target
       setting.suffix = setting.suffix || ''
-      console.log(setting.input)
       for(property in setting.input) setting.html.input.setAttribute(property, setting.input[property])
       setting.html.value.innerHTML = setting.html.input.value + setting.suffix
       setting.html.label.innerHTML = setting.label
