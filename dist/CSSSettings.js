@@ -55,7 +55,7 @@ function CSSettings(options) {
       }
       var value = this.value ? this.value() : value + this.suffix
       this.html.value.innerHTML = value
-      if(this.target) this.target.style[this.style] = value
+      if(this.target) this.target.style.setProperty(this.style, value)
    }
 
    this.construct(options)
